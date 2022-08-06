@@ -1,0 +1,54 @@
+<ion-header  class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/tabs/tab1"
+        icon="chevron-back"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Visi & Misi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="backdrop" [ngClass]="backdropVisible ? 'fade-in' : 'fade'" tappable (click)="drawer.toggleDrawer()"></div>
+  <div class="wave-container">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#FFFFFF"
+        fill-opacity="1"
+        d="M0,64L120,101.3C240,139,480,213,720,202.7C960,192,1200,96,1320,48L1440,0L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+      ></path>
+    </svg>
+  </div>
+
+  <ion-card class="ion-no-border" style="border: 1px solid;
+  background-color: aliceblue;
+  font-family: system-ui;">
+    <ion-card-header>
+      <ion-card-title>Visi</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Menjadi Perguruan Tinggi yang memiliki daya saing global di bidang teknologi informasi dan bisnis pada tahun 2045
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="ion-no-border" style="border: 1px solid;
+  background-color: aliceblue;
+  font-family: system-ui;" (click)="detailMisi()">
+    <ion-card-header>
+      <ion-card-title>Misi</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Untuk mewujudkan Visi Universitas Binaniaga Indonesia tersebut Misi Universitas Binaniaga Indonesia adalah:
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+
+ 
+</ion-content>
+
+<app-drawer (openStateChanged)="toggleBackdrop($event)" #drawer></app-drawer>
